@@ -1,4 +1,4 @@
-package com.ahmadsedi;
+package com.ahmadsedighi;
 
 import java.util.List;
 import java.util.stream.Collectors;

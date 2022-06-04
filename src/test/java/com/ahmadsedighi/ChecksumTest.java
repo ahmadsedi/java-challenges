@@ -1,4 +1,4 @@
-package com.ahmadsedi;
+package com.ahmadsedighi;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

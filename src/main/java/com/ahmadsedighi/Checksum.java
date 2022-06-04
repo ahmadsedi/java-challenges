@@ -1,7 +1,6 @@
-package com.ahmadsedi;
+package com.ahmadsedighi;
 
 import java.util.stream.IntStream;
-import java.util.stream.Stream;
 
 /**
  * @author Ahmad R. Seddighi (ahmadseddighi@yahoo.com)
