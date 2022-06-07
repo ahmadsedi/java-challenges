@@ -1,5 +1,6 @@
-package com.ahmadsedighi;
+package com.ahmadsedighi.java.challenges;
 
+import com.ahmadsedighi.java.challenges.PerfectNumbers;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 

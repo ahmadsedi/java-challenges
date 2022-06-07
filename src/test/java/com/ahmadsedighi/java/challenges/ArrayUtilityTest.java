@@ -1,8 +1,8 @@
-package com.ahmadsedighi;
+package com.ahmadsedighi.java.challenges;
 
+import com.ahmadsedighi.java.challenges.ArrayUtility;
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
-import org.junit.platform.commons.util.StringUtils;
 
 import java.util.AbstractMap;
 import java.util.Map;

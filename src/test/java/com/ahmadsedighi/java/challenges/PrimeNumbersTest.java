@@ -1,4 +1,4 @@
-package com.ahmadsedighi;
+package com.ahmadsedighi.java.challenges;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;

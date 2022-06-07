@@ -1,4 +1,4 @@
-package com.ahmadsedighi;
+package com.ahmadsedighi.java.challenges;
 
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
