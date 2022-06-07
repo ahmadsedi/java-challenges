@@ -93,5 +93,37 @@ public class ArrayUtilityTest {
         Assertions.assertArrayEquals(new String[]{"C++"}, ArrayUtility.common(new String[]{"Java", "C++"}, new String[]{".Net", "C++"}));
     }
 
+    @Test
+    public void firstThreeLongest_givenEmptyArray_returnEmptyArray(){
+        Assertions.assertArrayEquals(new String[]{}, ArrayUtility.firstThreeLongest(new String[]{}));
+    }
+
+    @Test
+    public void firstThreeLongest_givenArrayWithOneElement_returnTheSameArray(){
+        Assertions.assertArrayEquals(new String[]{"Java"}, ArrayUtility.firstThreeLongest(new String[]{"Java"}));
+    }
+
+    @Test
+    public void firstThreeLongest_givenUnorderedArray_returnThreeLongestStrings(){
+        Assertions.assertArrayEquals(new String[]{"Programming", "Language", "Computer"},
+                ArrayUtility.firstThreeLongest(new String[]{"Java", "Programming", "Python", "C#", "Language", "Computer"}));
+    }
+
+    @Test
+    public void firstThreeShortest_givenEmptyArray_returnEmptyArray(){
+        Assertions.assertArrayEquals(new String[]{}, ArrayUtility.firstThreeShortest(new String[]{}));
+    }
+
+    @Test
+    public void firstThreeShortest_givenArrayWithOneElement_returnTheSameArray(){
+        Assertions.assertArrayEquals(new String[]{"Java"}, ArrayUtility.firstThreeShortest(new String[]{"Java"}));
+    }
+
+    @Test
+    public void firstThreeShortest_givenUnorderedArray_returnThreeLongestStrings(){
+        Assertions.assertArrayEquals(new String[]{"C#", "Java", "Python"},
+                ArrayUtility.firstThreeShortest(new String[]{"Java", "Programming", "Python", "C#", "Language", "Computer"}));
+    }
+
 
 }
