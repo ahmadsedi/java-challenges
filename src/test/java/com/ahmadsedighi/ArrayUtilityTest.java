@@ -125,5 +125,20 @@ public class ArrayUtilityTest {
                 ArrayUtility.firstThreeShortest(new String[]{"Java", "Programming", "Python", "C#", "Language", "Computer"}));
     }
 
+    @Test
+    public void findMaxOccurringWord_givenOneWord_returnTheSame(){
+        Assertions.assertEquals("Java", ArrayUtility.findMaxOccurringWord("Java"));
+    }
+
+    @Test
+    public void findMaxOccurringWord_givenEmptyString_returnEmpty(){
+        Assertions.assertEquals("", ArrayUtility.findMaxOccurringWord(""));
+    }
+
+    @Test
+    public void findMaxOccurringWord_givenNormalString_returnMaxOccurring(){
+        Assertions.assertEquals("Java", ArrayUtility.findMaxOccurringWord("Between Java and Java , I prefer Scala !"));
+    }
+
 
 }
