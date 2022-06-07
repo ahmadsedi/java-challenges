@@ -2,6 +2,7 @@ package com.ahmadsedighi;
 
 import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
+import org.junit.platform.commons.util.StringUtils;
 
 import java.util.AbstractMap;
 import java.util.Map;
@@ -59,6 +60,37 @@ public class ArrayUtilityTest {
         for(Map.Entry<String, Long> entry : actual.entrySet()) {
             Assertions.assertEquals(entry.getValue(), expected.get(entry.getKey()));
         }
+    }
+
+    @Test
+    public void removeDuplicates_givenEmpty_returnEmpty(){
+        Assertions.assertArrayEquals(new String[]{}, ArrayUtility.removeDuplicates(new String[]{}));
+    }
+
+    @Test
+    public void removeDuplicates_givenDuplicates_returnDistincts(){
+        Assertions.assertArrayEquals(new String[]{"Java", ".Net"},
+                ArrayUtility.removeDuplicates(new String[]{"Java", "Java", "Java", "Java", "Java", "Java", ".Net", ".Net", ".Net", ".Net"}));
+    }
+
+    @Test
+    public void common_givenEmptyArrays_returnEmpty(){
+        Assertions.assertArrayEquals(new String[]{}, ArrayUtility.common(new String[]{}, new String[]{}));
+    }
+
+    @Test
+    public void common_givenOneEmptyArray_returnEmpty(){
+        Assertions.assertArrayEquals(new String[]{}, ArrayUtility.common(new String[]{"Java"}, new String[]{}));
+    }
+
+    @Test
+    public void common_givenNotInCommon_returnEmpty(){
+        Assertions.assertArrayEquals(new String[]{}, ArrayUtility.common(new String[]{"Java"}, new String[]{".Net"}));
+    }
+
+    @Test
+    public void common_givenHaveCommons_returnCommonArray(){
+        Assertions.assertArrayEquals(new String[]{"C++"}, ArrayUtility.common(new String[]{"Java", "C++"}, new String[]{".Net", "C++"}));
     }
 
 
