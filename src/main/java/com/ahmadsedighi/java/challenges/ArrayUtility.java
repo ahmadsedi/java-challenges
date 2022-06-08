@@ -14,7 +14,7 @@ import static java.util.stream.Collectors.*;
 
 public class ArrayUtility {
     /**
-     * Receives an array of {@code String} and finds how often each element has repeated in the array.
+     * Finds how often each element in an array of {@code String} has repeated.
      *
      * @param array of {@code String} to be processed.
      *
