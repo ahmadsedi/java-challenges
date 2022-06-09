@@ -3,10 +3,12 @@ package com.ahmadsedighi.java.challenges;
 import java.lang.reflect.Array;
 import java.util.Arrays;
 import java.util.Optional;
+import java.util.OptionalDouble;
 import java.util.stream.Collector;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
 
+import static java.util.stream.Collectors.averagingInt;
 import static java.util.stream.Collectors.joining;
 
 /**
@@ -36,4 +38,14 @@ public class StringUtility {
     }
 
 
+    /**
+     * Extracts digit characters from a string and calculates the average.
+     *
+     * @param input represents the string which is being processed.
+     *
+     * @return {@code Optional} which wraps the average value of all digits.
+     */
+    public static OptionalDouble averageDigits(String input){
+        return input.chars().filter(Character::isDigit).mapToLong(e->Long.parseLong(String.valueOf((char)e))).average();
+    }
 }

@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.Optional;
+import java.util.OptionalDouble;
 
 /**
  * @author Ahmad R. Seddighi (ahmadseddighi@yahoo.com)
@@ -26,5 +27,20 @@ public class StringUtilityTest {
     @Test
     public void extractDigits_givenNotEmptyWithDigits_returnLongValue(){
         Assertions.assertEquals(Optional.of(18L), StringUtility.extractDigits("Java 1.8"));
+    }
+
+    @Test
+    public void averageDigits_givenEmpty_returnEmptyOptional(){
+        Assertions.assertEquals(OptionalDouble.empty(), StringUtility.averageDigits(""));
+    }
+
+    @Test
+    public void averageDigits_givenNotEmptyNoDigit_returnEmptyOptional(){
+        Assertions.assertEquals(OptionalDouble.empty(), StringUtility.averageDigits("Java"));
+    }
+
+    @Test
+    public void averageDigits_givenNotEmptyWithDigits_returnNotEmptyOptionalDouble(){
+        Assertions.assertEquals(OptionalDouble.of(4.5d), StringUtility.averageDigits("Java1.8"));
     }
 }
