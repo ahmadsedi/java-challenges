@@ -4,6 +4,7 @@ import org.junit.jupiter.api.Assertions;
 import org.junit.jupiter.api.Test;
 
 import java.util.List;
+import java.util.Map;
 
 /**
  * @author Ahmad R. Seddighi (ahmadseddighi@yahoo.com)
@@ -23,6 +24,21 @@ public class PrimeNumbersTest {
     @Test
     public void isPrime_given4_returnTrue(){
         Assertions.assertFalse(PrimeNumbers.isPrime(4));
+    }
+
+    @Test
+    public void groupByPrime_givenOne_returnEmptyMap(){
+        Assertions.assertThrows(IllegalArgumentException.class, ()->PrimeNumbers.groupByPrime(1).size());
+    }
+
+    @Test
+    public void groupByPrime_givenTwo_returnEmptyMap(){
+        Assertions.assertThrows(IllegalArgumentException.class, ()->PrimeNumbers.groupByPrime(2).size());
+    }
+
+    @Test
+    public void groupByPrime_givenThree_returnEmptyMap(){
+        Assertions.assertEquals(Map.<Boolean, List>of(Boolean.TRUE, List.of(2, 3), Boolean.FALSE, List.of()), PrimeNumbers.groupByPrime(3));
     }
 
     @Test
