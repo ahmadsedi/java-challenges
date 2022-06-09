@@ -3,6 +3,7 @@ package com.ahmadsedighi.java.challenges;
 import java.util.Comparator;
 import java.util.List;
 import java.util.Map;
+import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import static java.util.stream.Collectors.*;
 
@@ -52,6 +53,18 @@ public class ArrayUtility {
 
     public static String[] common(String[] array1, String[] array2){
         return Stream.of(array1).filter(List.of(array2)::contains).toArray(String[]::new);
+    }
+
+    /**
+     * Counts the number of uncommon elements in two arrays
+     *
+     * @param array1 represents the first array to be used
+     * @param array2 represents the second array to compare with the first array.
+     *
+     * @return the number of uncommon elements in two arrays.
+     */
+    public static Long countUncommon(String[] array1, String[] array2){
+        return Stream.of(array1).filter(e -> !List.of(array2).contains(e)).count();
     }
 
     public static String[] firstThreeLongest(String[] array){

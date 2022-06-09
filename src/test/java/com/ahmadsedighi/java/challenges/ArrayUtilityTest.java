@@ -140,5 +140,22 @@ public class ArrayUtilityTest {
         Assertions.assertEquals("Java", ArrayUtility.findMaxOccurringWord("Between Java and Java , I prefer Scala !"));
     }
 
+    @Test
+    public void countUncommon_emptyArrays_returnZero(){
+        Assertions.assertEquals(0L, ArrayUtility.countUncommon(new String[]{}, new String[]{}));
+    }
+
+    @Test
+    public void countUncommon_commonArrays_returnZero(){
+        Assertions.assertEquals(0L, ArrayUtility.countUncommon(new String[]{"Java", "Computer", "Programming"},
+                new String[]{"Java", "Computer", "Programming"}));
+    }
+
+    @Test
+    public void countUncommon_normalArrays_returnCount(){
+        Assertions.assertEquals(1L, ArrayUtility.countUncommon(new String[]{"Python", "Java", "Computer", "Programming"},
+                new String[]{"Java", "Computer", "Programming", ".Net"}));
+    }
+
 
 }
