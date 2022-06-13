@@ -22,9 +22,9 @@ public class RandomCollector<T> implements Collector<T, List<T>, List<T>>{
 
     @Override
     public BiConsumer<List<T>, T> accumulator() {
-        return (ts, t) -> {
+        return (list, e) -> {
             if(Math.random() < 0.5) {
-                ts.add(t);
+                list.add(e);
             }
         };
     }
