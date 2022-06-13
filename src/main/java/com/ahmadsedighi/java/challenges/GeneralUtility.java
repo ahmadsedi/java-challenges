@@ -1,6 +1,8 @@
 package com.ahmadsedighi.java.challenges;
 
+import java.util.List;
 import java.util.stream.IntStream;
+import java.util.stream.Stream;
 
 /**
  * @author Ahmad R. Seddighi (ahmadseddighi@yahoo.com)
@@ -20,5 +22,16 @@ public class GeneralUtility {
                 StringBuilder::new,
                 StringBuilder::append,
                 StringBuilder::append).toString();
+    }
+
+    /**
+     * Randomly selects elements of a list
+     *
+     * @param list to be processed.
+     *
+     * @return random elements of input list.
+     */
+    public static List<String> selectRandomly(List<String> list){
+        return list.stream().collect(new RandomCollector<String>());
     }
 }
